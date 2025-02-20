@@ -1,6 +1,6 @@
 import { test, expect } from '../fixtures/loginFixtures';
 import users from '../data/users.json' assert { type: "json" }; 
-import { ERROR_MESSAGES } from "../pages/messages";
+import { ERROR_MESSAGES, URL_ROUTES } from "../pages/messages";
 
 
 test.describe('Positive Test Cases', () => {
@@ -14,7 +14,8 @@ test.describe('Positive Test Cases', () => {
         expect(errorMessage).toContain(ERROR_MESSAGES.lockedOutMessage);
 
       } else {  
-          await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
+          await expect(page).toHaveURL(URL_ROUTES.homepage);
+          await expect(page.locator('[data-test="primary-header"]')).toContainText('Swag Labs');
       }
     });
   });

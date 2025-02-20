@@ -1,11 +1,11 @@
-
+import { LOGIN_PAGE } from "../objects/locators";
 class LoginPage {
     constructor(page) {
         this.page = page;
-        this.usernameField = page.locator("#user-name");
-        this.passwordField = page.locator('#password');
-        this.loginButton = page.locator('#login-button');
-        this.errorMessageElement = page.locator('[data-test="error"]');
+        this.usernameField = page.locator(LOGIN_PAGE.usernameField);
+        this.passwordField = page.locator(LOGIN_PAGE.passwordField);
+        this.loginButton = page.locator(LOGIN_PAGE.loginButton);
+        this.errorMessageElement = page.locator(LOGIN_PAGE.errorMessage);
     }
 
     async errorMessage() {
